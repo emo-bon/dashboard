@@ -13,7 +13,17 @@ logo                        : logo.png  # A path to the book logo
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
+  allow_errors: true
+  timeout: 120
+
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - linkify
+    - substitution
+    - tasklist
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -35,3 +45,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+sphinx:
+  extra_extensions:
+    - sphinxcontrib.mermaid
