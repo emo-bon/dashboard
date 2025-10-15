@@ -1,9 +1,7 @@
-jupyter-book
 matplotlib
 numpy
 ghp-import
-pandas
 plotly
+pandas
 kaleido
-sphinxcontrib-mermaid
 git+https://github.com/vliz-be-opsci/py-sema.git
