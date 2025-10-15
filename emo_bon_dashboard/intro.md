@@ -8,7 +8,7 @@ This dashboard provides insights and visualizations of the EMO-BON Knowledge Gra
 
 This Jupyter Book is organized into the following sections:
 
-```{mermaid}
+:::{mermaid}
 graph TD
     A[EMO-BON Dashboard] --> B[Dashboard Overview]
     A --> C[Quality Analysis]
@@ -16,7 +16,7 @@ graph TD
     B --> E[Samples]
     C --> F[Data Quality Checks]
     C --> G[Validation Reports]
-```
+:::
 
 ### Dashboard Overview
 Interactive visualizations and queries showing:
