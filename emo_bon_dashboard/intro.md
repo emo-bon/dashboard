@@ -14,6 +14,8 @@ graph TD
     A --> C[Quality Analysis]
     B --> D[Observatories]
     B --> E[Samples]
+    B --> H[Measurements]
+    B --> I[Sequences]
     C --> F[Data Quality Checks]
     C --> G[Validation Reports]
 :::
