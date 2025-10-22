@@ -1,0 +1,11 @@
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX emobon: <https://data.emobon.embrc.eu/ns/core#>
+PREFIX schema: <http://schema.org/>
+
+SELECT ?country (COUNT(?observatory) as ?count)
+WHERE {
+  ?observatory a emobon:Observatory .
+  OPTIONAL { ?observatory emobon:originCountry ?country . }
+}
+GROUP BY ?country
+ORDER BY DESC(?count)

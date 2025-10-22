@@ -1,0 +1,16 @@
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX emobon: <https://data.emobon.embrc.eu/ns/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geosparql: <http://www.opengis.net/ont/geosparql#>
+
+SELECT DISTINCT ?observatory ?obsId  ?country ?region ?wkt
+WHERE {
+  ?observatory a emobon:Observatory .
+  ?observatory emobon:observatoryId ?obsId .
+  ?observatory emobon:originCountry ?country .
+  ?observatory emobon:marineRegion ?region .
+  ?observatory emobon:geoLocation/geosparql:asWKT ?wkt .
+    
+}
+ORDER BY ?name

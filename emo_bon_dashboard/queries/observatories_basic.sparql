@@ -1,0 +1,13 @@
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX emobon: <https://data.emobon.embrc.eu/ns/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?observatory ?obsId  ?country
+WHERE {
+  ?observatory a emobon:Observatory .
+  ?observatory emobon:observatoryId ?obsId .
+  ?observatory emobon:originCountry ?country .
+    
+}
+ORDER BY ?name
