@@ -1,0 +1,21 @@
+PREFIX prod: <https://data.emobon.embrc.eu/ns/product#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX emobon: <https://data.emobon.embrc.eu/ns/core#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?sequence ?scientificName ?taxonRank ?kingdom ?phylum ?class ?order ?family ?genus
+WHERE {
+  ?sequence a prod:Sequence .
+  OPTIONAL { ?sequence prod:scientificName ?scientificName . }
+  OPTIONAL { ?sequence prod:taxonRank ?taxonRank . }
+  OPTIONAL { ?sequence prod:kingdom ?kingdom . }
+  OPTIONAL { ?sequence prod:phylum ?phylum . }
+  OPTIONAL { ?sequence prod:class ?class . }
+  OPTIONAL { ?sequence prod:order ?order . }
+  OPTIONAL { ?sequence prod:family ?family . }
+  OPTIONAL { ?sequence prod:genus ?genus . }
+}
+ORDER BY ?scientificName
+LIMIT 1000

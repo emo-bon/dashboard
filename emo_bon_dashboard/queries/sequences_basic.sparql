@@ -1,0 +1,10 @@
+PREFIX prod: <https://data.emobon.embrc.eu/ns/product#>
+PREFIX dct: <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?sequence ?title ?description
+WHERE {
+  ?sequence a prod:Sequence .
+  OPTIONAL { ?sequence dct:title ?title . }
+  OPTIONAL { ?sequence dct:description ?description . }
+}
+LIMIT 100
