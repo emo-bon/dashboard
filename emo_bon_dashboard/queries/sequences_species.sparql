@@ -1,0 +1,9 @@
+PREFIX prod: <https://data.emobon.embrc.eu/ns/product#> 
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT ?rank ?partof (COUNT(?annotation) AS ?annotationCount) WHERE { 
+  ?annotation a prod:TaxonomicAnnotation .
+  ?annotation <http://purl.org/dc/terms/isPartOf> ?partof .
+  ?annotation dct:identifier ?id .
+  ?id dct:taxonRank ?rank .
+} GROUP BY ?rank ?partof
+ORDER BY DESC(?annotationCount)

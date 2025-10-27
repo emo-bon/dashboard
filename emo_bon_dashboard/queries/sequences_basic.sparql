@@ -1,0 +1,6 @@
+PREFIX prod: <https://data.emobon.embrc.eu/ns/product#> 
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?partof WHERE { 
+	?annotation a prod:TaxonomicAnnotation .
+    ?annotation <http://purl.org/dc/terms/isPartOf> ?partof .
+}

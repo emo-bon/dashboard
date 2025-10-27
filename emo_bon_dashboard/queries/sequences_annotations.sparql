@@ -1,0 +1,12 @@
+PREFIX prod: <https://data.emobon.embrc.eu/ns/product#> 
+PREFIX dct: <http://purl.org/dc/terms/>
+SELECT ?annotation ?lsuRNA ?ssuRNA ?scientificName ?taxonRank WHERE { 
+    ?annotation a prod:TaxonomicAnnotation .
+    OPTIONAL { ?annotation prod:lsuRNA ?lsuRNA . }
+    OPTIONAL { ?annotation prod:ssuRNA ?ssuRNA . }
+    OPTIONAL { 
+        ?annotation dct:identifier ?taxinfo .
+        ?taxinfo dct:scientificName ?scientificName .
+        ?taxinfo dct:taxonRank ?taxonRank .
+    }
+}
