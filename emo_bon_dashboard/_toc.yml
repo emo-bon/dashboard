@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: observatories
 - file: samples
+- file: sequences
 - file: quality_analysis
